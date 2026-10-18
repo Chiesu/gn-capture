@@ -1,10 +1,11 @@
 schema_version = "1.0.0"
 id = "mw_gn_capture"
-version = "1.1.0"
-name = "MW Geometry Nodes Capture"
+version = "1.1.1"
+name = "GN Capture"
 tagline = "Export detailed Geometry Nodes diagnostics for troubleshooting"
 maintainer = "Chiesu"
 type = "add-on"
+website = "https://github.com/Chiesu/gn-capture"
 blender_version_min = "4.2.0"
 license = ["SPDX:GPL-3.0-or-later"]
 
@@ -13,4 +14,4 @@ files = "Write diagnostic ZIPs to the user's Downloads folder"
 clipboard = "Copy the path of the exported diagnostic ZIP"
 
 [build]
-paths_exclude_pattern = ["__pycache__/", "*.pyc", ".git/", ".github/", "docs/", "*.zip", "*.md", "MW_GN_Capture_v1_1.py"]
+paths_exclude_pattern = ["__pycache__/", "*.pyc", ".git/", ".github/", "docs/", "*.zip", "*.md", ".gitignore", "GN_Capture_Standalone.py", "scripts/", "tests/"]

@@ -1,25 +1,26 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 bl_info = {
-    "name": "MW | Geometry Nodes Capture",
-    "author": "Magnetic Works / OpenAI",
-    "version": (1, 1, 0),
+    "name": "GN Capture",
+    "author": "Chiesu",
+    "version": (1, 1, 1),
     "blender": (4, 2, 0),
-    "location": "3D Viewport > Sidebar (N) > GN Capture; F3 > MW Export GN Capture",
+    "location": "3D Viewport > Sidebar (N) > GN Capture; F3 > Export GN Capture",
     "description": "Read-only Geometry Nodes diagnostic export to ~/Downloads",
     "category": "Node",
 }
 
 """
-MW | Geometry Nodes Capture v1.1
+GN Capture v1.1.1
 =================================
-One reusable exporter for Blender 4.2+ / 5.2.x.
+Read-only Geometry Nodes diagnostic exporter for Blender 4.2+ and 5.x.
 
 QUICK RUN (no addon installation):
     Select an object with Geometry Nodes, open this file in Blender's
     Scripting > Text Editor, click Run Script. A ZIP is written to Downloads.
 
-INSTALL AS ADDON (optional):
-    Edit > Preferences > Add-ons > Install from Disk, select this .py.
-    Select the object, press F3 and search "MW Export GN Capture", or
+INSTALL AS SINGLE SCRIPT:
+    Run this file in Blender > Scripting > Text Editor.
+    Or install the packaged extension and press F3 for "Export GN Capture", or
     open Viewport N-panel > GN Capture > Export to Downloads.
 
 Produces one .zip: full graph.json, human-readable overview.txt, and README.txt.
@@ -714,7 +715,7 @@ def format_plain(value, max_length=220):
 def text_report(data):
     summary = data["summary"]
     lines = [
-        "MW | GEOMETRY NODES CAPTURE",
+        "GN CAPTURE",
         "=" * 72,
         "Blender: " + data["blender_version"],
         "Blend: " + data["blend_file"],
@@ -792,9 +793,9 @@ def export_capture(context, include_materials=True):
     stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output = downloads_directory() / ("GN_CAPTURE_" + name + "_" + stamp + ".zip")
     readme = (
-        "MW | GEOMETRY NODES CAPTURE\n"
+        "GN CAPTURE\n"
         "===========================\n\n"
-        "Upload this ZIP to ChatGPT when asking for a Geometry Nodes fix.\n"
+        "Attach this ZIP when asking for a Geometry Nodes fix or review.\n"
         "It contains graph.json (machine-readable, full node graph) and\n"
         "overview.txt (readable connection map).\n\n"
         "READ-ONLY: no scene changes, no geometry evaluation, no render.\n"
@@ -816,15 +817,15 @@ def export_capture(context, include_materials=True):
         context.window_manager.clipboard = str(output)
     except Exception:
         pass
-    print("\n[MW GN Capture] Exported:", output)
-    print("[MW GN Capture] Summary:", data["summary"])
-    print("[MW GN Capture] Upload this ZIP to ChatGPT with your screenshot and fix request.")
+    print("\n[GN Capture] Exported:", output)
+    print("[GN Capture] Summary:", data["summary"])
+    print("[GN Capture] Share the ZIP with a screenshot and a description of the issue.")
     return output, data
 
 
 class MW_OT_export_gn_capture(bpy.types.Operator):
     bl_idname = "mw.export_gn_capture"
-    bl_label = "MW Export GN Capture"
+    bl_label = "Export GN Capture"
     bl_description = "Export selected object's Geometry Nodes diagnostic ZIP to Downloads"
     bl_options = {"REGISTER"}
 
@@ -956,7 +957,7 @@ if __name__ == "__main__":
         path, _report = export_capture(bpy.context)
         def _popup(self, context):
             self.layout.label(text="Saved in Downloads: " + path.name[:75])
-            self.layout.label(text="ZIP path copied to clipboard. Upload the ZIP to ChatGPT.")
+            self.layout.label(text="ZIP path copied to clipboard. Share the ZIP with your report.")
         try:
             bpy.context.window_manager.popup_menu(_popup, title="GN Capture Complete", icon="CHECKMARK")
         except Exception:

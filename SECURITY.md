@@ -1,7 +1,5 @@
 # Security and responsible disclosure
 
-Do not include passwords, private API keys, access tokens, or private `.blend` files when reporting issues.
+GN Capture writes ZIP files locally and does not upload them automatically. A diagnostic archive can still contain sensitive metadata or local paths. Review exports before sharing, including attachments to public bug reports.
 
-For potential vulnerabilities, use GitHub's private vulnerability reporting feature if enabled. Otherwise, open a non-sensitive issue requesting a private contact channel. Do not post sensitive details publicly.
-
-This project has no guaranteed response times and is maintained as an independent experimental tool.
+For security issues, use GitHub's private vulnerability reporting if enabled. Otherwise, open a non-sensitive issue requesting a private communication channel. Do not publish sensitive details in a public issue.

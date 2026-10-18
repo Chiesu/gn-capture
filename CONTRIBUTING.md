@@ -1,9 +1,7 @@
-# Contributing to GN Capture
+# Contributing
 
-1. Check existing issues before opening a new one.
-2. Include the exact app/Blender version, OS, a reproducible example, and a screenshot or terminal output when reporting a bug.
-3. For changes, keep PRs focused and explain the behavior changed. Avoid unrelated visual or data-model refactors.
-4. Do not commit licensed third-party asset payloads, proprietary add-on code, credentials, personal data, or generated caches.
-5. Test the installable distribution, not only an unpacked development folder.
+Report bugs through GitHub Issues, including the exact app/add-on version, steps to reproduce, and your Blender/macOS version. Avoid attaching private `.blend` files, account credentials, or license-restricted assets.
 
-By contributing, you agree that your contribution can be distributed under the repository license.
+For code contributions, keep changes focused, retain backwards compatibility with saved scenes/data where practical, and explain how you tested the change. Submit a pull request with screenshots for UI changes. Maintainers review changes when available; there are no guaranteed support or response times.
+
+Please do not commit generated caches, user libraries, or downloaded third-party assets.
