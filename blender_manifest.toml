@@ -1,0 +1,16 @@
+schema_version = "1.0.0"
+id = "mw_gn_capture"
+version = "1.1.0"
+name = "MW Geometry Nodes Capture"
+tagline = "Export detailed Geometry Nodes diagnostics for troubleshooting"
+maintainer = "Magnetic Works contributors"
+type = "add-on"
+blender_version_min = "4.2.0"
+license = ["SPDX:GPL-3.0-or-later"]
+
+[permissions]
+files = "Write diagnostic ZIPs to the user's Downloads folder"
+clipboard = "Copy the path of the exported diagnostic ZIP"
+
+[build]
+paths_exclude_pattern = ["__pycache__/", "*.pyc", ".git/", ".github/", "docs/", "*.zip", "*.md", "MW_GN_Capture_v1_1.py"]
