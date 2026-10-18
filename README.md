@@ -6,7 +6,7 @@ It exports the selected object's node graphs (including nested groups), node lin
 
 ## Installation (Blender extension)
 
-1. Download `mw_gn_capture-1.1.0.zip` from [GitHub Releases](https://github.com/Chiesu/gn-capture/releases/latest).
+1. Download `gn_capture-1.1.0.zip` from [GitHub Releases](https://github.com/Chiesu/gn-capture/releases/latest).
 2. Blender 4.2+: **Edit > Preferences > Get Extensions > Install from Disk**.
 3. Select the ZIP and enable **MW Geometry Nodes Capture**.
 4. Select an object containing a Geometry Nodes modifier.
