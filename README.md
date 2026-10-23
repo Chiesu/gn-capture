@@ -4,6 +4,8 @@ A read-only Blender extension for exporting Geometry Nodes diagnostics as a sing
 
 **Current release:** v1.1.1 · **Blender:** 4.2+ · **License:** GPL-3.0-or-later.
 
+<img width="1920" height="1080" alt="hero" src="https://github.com/user-attachments/assets/d483fc62-2025-426e-8db6-91a70e98f1c6" />
+
 ## Download and install
 
 1. Download **`gn_capture-1.1.1.zip`** from [GitHub Releases](https://github.com/Chiesu/gn-capture/releases/latest). Download the attached asset, **not** GitHub's automatically generated source archive.
@@ -14,6 +16,8 @@ A read-only Blender extension for exporting Geometry Nodes diagnostics as a sing
 This update keeps the existing extension ID (`mw_gn_capture`) to avoid creating a second installation for people upgrading from v1.1.0.
 
 ## How to use it
+
+<img width="1920" height="1080" alt="export-panel" src="https://github.com/user-attachments/assets/51ac907b-8c87-432b-b7b4-2108218c0ece" />
 
 1. Select the object with a **Geometry Nodes** modifier.
 2. Optionally disable **Include material nodes**.
